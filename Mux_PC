@@ -1,0 +1,21 @@
+module Mux_PC(pc_plus_4,
+         nxt_pc,
+         branch_address,
+         jump_address,
+         PCsrc);
+
+    //define inputs and outputs
+    input wire [31:0] pc_plus_4;
+    input wire [31:0] branch_address;
+    input wire [31:0] jump_address;
+    input [1:0] PCsrc;
+    output wire [31:0] nxt_pc;
+
+    // Assign statement for 3-to-1 multiplexer
+    assign nxt_pc = (PCsrc == 2'b00) ? pc_plus_4 : 
+                    (PCsrc == 2'b01) ? branch_address : 
+                    (PCsrc == 2'b10) ? jump_address : 
+                    32'b0; // Default case to handle invalid PCsrc
+
+
+endmodule 
