@@ -1,0 +1,24 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001d6ca4968f0 .scope module, "Add_unit" "Add_unit" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "curr_ps";
+    .port_info 1 /OUTPUT 32 "pc_plus_4";
+L_000001d6ca36bcf8 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v000001d6ca496a80_0 .net/2u *"_ivl_0", 31 0, L_000001d6ca36bcf8;  1 drivers
+o000001d6ca3268b8 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v000001d6ca496b20_0 .net "curr_ps", 31 0, o000001d6ca3268b8;  0 drivers
+v000001d6ca496bc0_0 .net "pc_plus_4", 31 0, L_000001d6ca496c60;  1 drivers
+L_000001d6ca496c60 .arith/sum 32, o000001d6ca3268b8, L_000001d6ca36bcf8;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "C:\Users\itayu\OneDrive\Documents\pipeline\pipeline\Add_unit.v";
